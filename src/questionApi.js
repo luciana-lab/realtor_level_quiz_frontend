@@ -14,4 +14,8 @@ class QuestionApi {
             })
             .catch()
     }
+
+    // static handleError(error) {
+    //     console.log(error)
+    // }
 }
