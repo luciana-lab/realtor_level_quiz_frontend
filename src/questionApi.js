@@ -6,7 +6,12 @@ class QuestionApi {
     getQuestions() {
         fetch(this.port + '/questions')
             .then(resp => resp.json())
-            .then(data => console.log(data))
+            .then(data => {
+                for (const question of data) {
+                    let q = new Question(question)
+                    q.attachToDom()
+                }
+            })
             .catch()
     }
 }
