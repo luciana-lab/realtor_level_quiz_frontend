@@ -1,10 +1,10 @@
 class QuestionApi {
     constructor(port) {
-        this.port = port
+        this.port = `${port}/questions`
     }
 
     getQuestions() {
-        fetch(this.port + '/questions')
+        fetch(this.port)
             .then(resp => resp.json())
             .then(data => {
                 for (const question of data) {

@@ -28,6 +28,7 @@ class Question {
             <div id="data-${this.id}">
             <h4 class="title">${this.title}</h4>
             <p class="content">${replaceCommaLine(this.content)}</p>
+            <button type="submit">Get Result</-button>
             </div>
             `
         return this.element;

@@ -1,10 +1,10 @@
 class RealtorLevelApi {
     constructor(port) {
-        this.port = port
+        this.port = `${port}/realtor_levels`
     }
 
     getResult() {
-        fetch(this.port + '/realtor_levels')
+        fetch(this.port)
             .then(resp => resp.json())
             .then(data => {
                 for (const level of data) {
