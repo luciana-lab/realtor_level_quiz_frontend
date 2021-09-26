@@ -17,6 +17,7 @@ class Question {
     }
 
     render() {
+        this.optionsId = this.options.map(option => option.id)
         this.content = this.options.map(option => option.content)
 
         function replaceCommaLine(content) {
@@ -26,9 +27,9 @@ class Question {
 
         this.element.innerHTML =
             `
-            <div id="question-data-${this.id}">
+            <div id="data-${this.id}">
             <h4 class="title">${this.title}</h4>
-            <p>${replaceCommaLine(this.content)}</p>
+            <p class="content">${replaceCommaLine(this.content)}</p>
             </div>
             `
         return this.element;

@@ -1,6 +1,7 @@
 const port = "http://localhost:3000";
 const questionCall = new QuestionApi(port);
 // const optionCall = new OptionApi(port);
+const realtorLevelCall = new realtorLevelApi(port);
 
 const form = document.getElementById("user-form");
 const userCall = new UserApi(port);
@@ -11,6 +12,7 @@ const hasAccountValue = document.getElementById("user-has_account");
 
 questionCall.getQuestions();
 // optionCall.getOptions();
+realtorLevelCall.getResult();
 
 form.addEventListener('submit', handleSubmit);
 
