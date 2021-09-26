@@ -1,5 +1,6 @@
 const port = "http://localhost:3000";
 const questionCall = new QuestionApi(port);
+const optionCall = new OptionApi(port);
 
 const form = document.getElementById("user-form");
 const userCall = new UserApi(port);
@@ -8,7 +9,8 @@ const lastNameValue = document.getElementById("user-last_name");
 const emailValue = document.getElementById("user-email");
 const hasAccountValue = document.getElementById("user-has_account");
 
-questionCall.getQuestions(); // do I need to pass an argument?
+questionCall.getQuestions();
+optionCall.getOptions();
 
 form.addEventListener('submit', handleSubmit);
 
