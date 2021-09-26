@@ -7,8 +7,6 @@ class Question {
         this.title = title;
         this.options = options;
 
-        // debugger
-
         this.element = document.createElement('li');
         this.element.dataset['id'] = id;
         this.element.id = `question-${id}`;

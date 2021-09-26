@@ -1,7 +1,7 @@
 const port = "http://localhost:3000";
 const questionCall = new QuestionApi(port);
 // const optionCall = new OptionApi(port);
-const realtorLevelCall = new realtorLevelApi(port);
+const realtorLevelCall = new RealtorLevelApi(port);
 
 const form = document.getElementById("user-form");
 const userCall = new UserApi(port);

@@ -1,4 +1,4 @@
-class realtorLevelApi {
+class RealtorLevelApi {
     constructor(port) {
         this.port = port
     }
@@ -8,7 +8,7 @@ class realtorLevelApi {
             .then(resp => resp.json())
             .then(data => {
                 for (const level of data) {
-                    let result = new realtorLevel(level)
+                    let result = new RealtorLevel(level)
                     result.attachToDom()
                 }
             })
