@@ -1,5 +1,6 @@
 class Question {
     static all = [];
+    static container = document.getElementById("question-container");
 
     constructor({ id, title, options }) {
         this.id = id;
@@ -16,14 +17,16 @@ class Question {
     render() {
         this.element.innerHTML =
             `
-        <div datat-id="${this.id}">
-        <h4 class="title">${this.title}</h4>
-        </div>
-        `
+            <div datat-id="${this.id}">
+            <h4 class="title">${this.title}</h4>
+            </div>
+            `
         return this.element;
     }
 
-
+    attachToDom() {
+        Question.container.appendChild(this.render())
+    }
 
 
 }
