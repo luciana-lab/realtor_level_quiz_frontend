@@ -27,6 +27,4 @@ class Question {
     attachToDom() {
         Question.container.appendChild(this.render())
     }
-
-
 }
