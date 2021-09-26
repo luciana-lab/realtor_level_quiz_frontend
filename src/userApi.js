@@ -4,12 +4,13 @@ class UserApi {
     }
 
     createUsers() {
+        // debugger
         const userInfo = {
             user: {
                 first_name: firstNameInput.value,
                 last_name: lastNameInput.value,
                 email: emailInput.value,
-                has_account: hasAccountInput.value
+                has_account: hasAccountInput.value,
             }
         }
         const configObj = {
@@ -23,7 +24,11 @@ class UserApi {
 
         fetch(this.port, configObj)
             .then(resp => resp.json())
-            .then(data => console.log(data))
+            .then(data => {
+                // new User(data)
+                console.log(data)
+            })
     }
 
 }
+// QuestionApi.getQuestions()
