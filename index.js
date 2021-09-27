@@ -10,17 +10,15 @@ const lastNameInput = document.getElementById("user-last_name");
 const emailInput = document.getElementById("user-email");
 const hasAccountInput = document.getElementById("user-has_account");
 
-// form.addEventListener('submit', UserApi.createUser);
-
 document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener('submit', handleSubmit);
 
     function handleSubmit(e) {
         e.preventDefault();
         userCall.createUsers();
-    }
-})
+    };
+});
 
-// questionCall.getQuestions();
+questionCall.getQuestions();
 // optionCall.getOptions();
 // realtorLevelCall.getResult();

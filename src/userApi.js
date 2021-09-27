@@ -23,13 +23,29 @@ class UserApi {
         }
 
         fetch(this.port, configObj)
-            .then(resp => resp.json())
+            .then(resp => {
+                if (resp.ok) {
+                    return resp.json()
+                } else {
+                    throw new Error()
+                }
+            })
             .then(data => {
                 // debugger
                 new User(data)
                 console.log(data)
             })
-        questionCall.getQuestions()
+            .catch(error => console.log(error))
+
+        // fetch(this.port, configObj)
+        //     .then(resp => resp.json())
+        //     .then(data => {
+        //         // debugger
+        //         new User(data)
+        //         console.log(data)
+        //     })
+
+        // questionCall.getQuestions()
     }
 
 }

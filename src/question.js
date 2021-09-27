@@ -1,68 +1,62 @@
+const btn = document.createElement('button')
+btn.type = "submit"
+btn.innerHTML = "Get Result"
+
 class Question {
     static all = [];
     static container = document.getElementById("question-container");
+    // static quizForm = document.getElementById("quiz-form")
 
     constructor({ id, title, options = [] }) {
         this.id = id;
         this.title = title;
         this.options = options;
 
-        this.element = document.createElement('ol');
+        this.element = document.createElement('div');
         this.element.dataset['id'] = id;
         this.element.id = `question-${id}`;
 
         Question.all.push(this);
+        // debugger
     }
 
     render() {
-        // this.optionsId = this.options.map(option => option.id)
-        // this.content = this.options.map(option => option.content)
-
-        // function replaceCommaLine(content) {
-        //     let options = content.toString().split(',').map(each => each.trim())
-        //     return options.join(`<br>`)
-        // }
-
         this.element.innerHTML = `
-        <div id="data-${this.id}">
         <h4 class="title">${this.title}</h4>
         </div>
         `
-
-        let li = document.createElement(`option`)
         for (let option of this.options) {
-            let opt = document.createElement("option")
-            opt.innerText = option.content
-            opt.id = option.id
-            li.append(opt)
-            this.element.append(li)
+            let radiobox = document.createElement('input')
+            radiobox.type = 'radio'
+            radiobox.id = `choice-${option.id}`
+            radiobox.value = option.content
+            radiobox.name = `question-${this.id}`
+
+            let label = document.createElement('label')
+            label.htmlFor = `choice-${option.id}`
+
+            let desciption = document.createTextNode(option.content)
+            label.appendChild(desciption)
+
+            let newLine = document.createElement('br')
+
+            this.element.appendChild(radiobox)
+            this.element.appendChild(label)
+            this.element.appendChild(newLine)
         }
+
+        // const btn = document.createElement('button')
+        // btn.type = "submit"
+        // btn.innerHTML = "Get Result"
+        // this.element.appendChild(btn)
 
         return this.element
     }
 
-    // render() {
-    //     this.optionsId = this.options.map(option => option.id)
-    //     this.content = this.options.map(option => option.content)
-
-    //     function replaceCommaLine(content) {
-    //         let options = content.toString().split(',').map(each => each.trim())
-    //         return options.join("<br>")
-    //     }
-
-    //     this.element.innerHTML =
-    //         `
-    //     <div id="data-${this.id}">
-    //     <h4 class="title">${this.title}</h4>
-    //     <input type="radio" class="content">${replaceCommaLine(this.content)}</input>
-    //     <button type="submit">Get Result</button>
-    //     </div>
-    //     `
-    //     return this.element;
-    // }
-
     attachToDom() {
         Question.container.appendChild(this.render())
+        Question.container.append(btn)
+        // Question.quizForm.appendChild(this.render())
     }
 
 }
