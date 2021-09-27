@@ -4,6 +4,8 @@ class QuestionApi {
     }
 
     getQuestions() {
+        form.remove()
+
         fetch(this.port)
             .then(resp => resp.json())
             .then(data => {

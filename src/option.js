@@ -25,15 +25,15 @@
 //            `
 //         )
 
-        // this.element.innerHTML =
-        //     `
-        //     <div data-id="${this.id}">
-        //     <p class="option-content">${this.content}</p>
-        //     </div>
-        //    `
-        // return this.element
+//         this.element.innerHTML =
+//             `
+//             <div data-id="${this.id}">
+//             <p class="option-content">${this.content}</p>
+//             </div>
+//            `
+//         return this.element
 
-        // questionOptionsr.parentNode.appendChild(ul)
+//         questionOptionsr.parentNode.appendChild(ul)
 //     }
 
 //     attachToQuestion() {
