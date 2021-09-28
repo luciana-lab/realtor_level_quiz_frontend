@@ -10,6 +10,7 @@ class RealtorLevelApi {
             .then(data => {
                 for (const level of data) {
                     let result = new RealtorLevel(level)
+                    debugger
                     result.attachToDom()
                 }
             })

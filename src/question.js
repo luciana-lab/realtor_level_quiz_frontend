@@ -71,7 +71,27 @@ class Question {
         }
 
         if (check === 6) {
-            debugger
+            if (expert > master && expert > top) {
+                // alert("Expert!!")
+                realtorLevelCall.getResult();
+            } else if (master > expert && master > top) {
+                // alert("Master!!")
+                realtorLevelCall.getResult();
+            } else if (top > expert && top > master) {
+                // alert("Top!")
+                realtorLevelCall.getResult();
+            } else if (expert === master && expert === top && master === top) {
+                if (questions[18].checked) {
+                    // alert("Expert!!")
+                    realtorLevelCall.getResult();
+                } else if (questions[19].checked) {
+                    // alert("Master")
+                    realtorLevelCall.getResult();
+                } else if (questions[20].checked) {
+                    // alert("Top!")
+                    realtorLevelCall.getResult();
+                }
+            }
 
             // debugger
             // realtorLevelCall.getResult();
