@@ -30,7 +30,7 @@ class Question {
             radiobox.type = 'radio'
             radiobox.id = `choice-${option.id}`
             radiobox.value = option.content
-            radiobox.name = `question-${this.id}`
+            radiobox.name = `radio-question-${this.id}`
 
             let label = document.createElement('label')
             label.htmlFor = `choice-${option.id}`
@@ -44,18 +44,31 @@ class Question {
             this.element.appendChild(label)
             this.element.appendChild(newLine)
         }
-
-        // const btn = document.createElement('button')
-        // btn.type = "submit"
-        // btn.innerHTML = "Get Result"
-        // this.element.appendChild(btn)
-
         return this.element
+    }
+
+    validate() {
+        let questions = document.querySelectorAll('[name^="radio-question-"]')
+        let check = 0
+        for (let i = 0; i < questions.length; i++) {
+            if (questions[i].checked) {
+                check++;
+            }
+        }
+
+        if (check === 6) {
+            alert("All good")
+        } else {
+            alert("You must answer all questions");
+            return false
+        }
     }
 
     attachToDom() {
         Question.container.appendChild(this.render())
         Question.container.append(btn)
+
+        btn.addEventListener("click", this.validate)
         // Question.quizForm.appendChild(this.render())
     }
 
