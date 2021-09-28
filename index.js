@@ -10,6 +10,8 @@ const lastNameInput = document.getElementById("user-last_name");
 const emailInput = document.getElementById("user-email");
 const hasAccountInput = document.getElementById("user-has_account");
 
+const quizContainer = document.getElementById("question-container")
+
 document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener('submit', handleSubmit);
 

@@ -4,6 +4,7 @@ class RealtorLevelApi {
     }
 
     getResult() {
+        quizContainer.remove()
         fetch(this.port)
             .then(resp => resp.json())
             .then(data => {
@@ -12,7 +13,5 @@ class RealtorLevelApi {
                     result.attachToDom()
                 }
             })
-
     }
-
 }

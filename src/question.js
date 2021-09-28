@@ -29,7 +29,7 @@ class Question {
             let radiobox = document.createElement('input')
             radiobox.type = 'radio'
             radiobox.id = `choice-${option.id}`
-            radiobox.value = option.content
+            radiobox.value = option.level
             radiobox.name = `radio-question-${this.id}`
 
             let label = document.createElement('label')
@@ -43,6 +43,8 @@ class Question {
             this.element.appendChild(radiobox)
             this.element.appendChild(label)
             this.element.appendChild(newLine)
+
+            // debugger
         }
         return this.element
     }
@@ -50,14 +52,30 @@ class Question {
     validate() {
         let questions = document.querySelectorAll('[name^="radio-question-"]')
         let check = 0
+        let expert = 0
+        let master = 0
+        let top = 0
         for (let i = 0; i < questions.length; i++) {
             if (questions[i].checked) {
-                check++;
+                check++
+                if (questions[i].value === "Expert") {
+                    expert++
+                }
+                if (questions[i].value === "Master") {
+                    master++
+                }
+                if (questions[i].value === "Top Agent") {
+                    top++
+                }
             }
         }
 
         if (check === 6) {
-            alert("All good")
+            debugger
+
+            // debugger
+            // realtorLevelCall.getResult();
+            // alert("All good!")
         } else {
             alert("You must answer all questions");
             return false

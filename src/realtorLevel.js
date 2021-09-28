@@ -10,7 +10,7 @@ class RealtorLevel {
         this.products = products
         this.promo_code = promo_code
         this.options = options
-
+        // debugger
         this.element = document.createElement('div');
         this.element.dataset['id'] = id;
         this.element.id = `result-${id}`;
@@ -29,6 +29,8 @@ class RealtorLevel {
             <p class="promo-code">Use ${this.promo_code} to get 10% off up to $50 on all products listed above.</p>
             </div>
             `
+
+        // debugger
         return this.element
     }
 
