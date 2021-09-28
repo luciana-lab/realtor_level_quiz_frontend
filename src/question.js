@@ -71,25 +71,22 @@ class Question {
         }
 
         if (check === 6) {
+            const level1 = "Expert"
+            const level2 = "Master"
+            const level3 = "Top Agent"
             if (expert > master && expert > top) {
-                // alert("Expert!!")
-                realtorLevelCall.getResult();
+                realtorLevelCall.getResult(level1)
             } else if (master > expert && master > top) {
-                // alert("Master!!")
-                realtorLevelCall.getResult();
+                realtorLevelCall.getResult(level2)
             } else if (top > expert && top > master) {
-                // alert("Top!")
-                realtorLevelCall.getResult();
+                realtorLevelCall.getResult(level3)
             } else if (expert === master && expert === top && master === top) {
                 if (questions[18].checked) {
-                    // alert("Expert!!")
-                    realtorLevelCall.getResult();
+                    realtorLevelCall.getResult(level1)
                 } else if (questions[19].checked) {
-                    // alert("Master")
-                    realtorLevelCall.getResult();
+                    realtorLevelCall.getResult(level2)
                 } else if (questions[20].checked) {
-                    // alert("Top!")
-                    realtorLevelCall.getResult();
+                    realtorLevelCall.getResult(level3)
                 }
             }
 

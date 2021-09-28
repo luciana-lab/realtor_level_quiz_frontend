@@ -3,16 +3,16 @@ class RealtorLevelApi {
         this.port = `${port}/realtor_levels`
     }
 
-    getResult() {
+    getResult(level) {
         quizContainer.remove()
         fetch(this.port)
             .then(resp => resp.json())
             .then(data => {
-                for (const level of data) {
-                    let result = new RealtorLevel(level)
-                    debugger
-                    result.attachToDom()
-                }
+                let result = data.filter((x) => {
+                    return x.level === level
+                })
+                const agent = new RealtorLevel(result[0])
+                agent.attachToDom()
             })
     }
 }

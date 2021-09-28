@@ -2,7 +2,7 @@ class RealtorLevel {
     static all = [];
     static container = document.getElementById("result-container");
 
-    constructor({ id, level, description, free_content, products, promo_code, options = [] }) {
+    constructor({ id, level, description, free_content, products, promo_code, options = [], users = [] }) {
         this.id = id
         this.level = level
         this.description = description
@@ -10,6 +10,7 @@ class RealtorLevel {
         this.products = products
         this.promo_code = promo_code
         this.options = options
+        this.users = users
         // debugger
         this.element = document.createElement('div');
         this.element.dataset['id'] = id;
