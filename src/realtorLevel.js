@@ -5,13 +5,14 @@ class RealtorLevel {
     constructor({ id, level, description, free_content, products, promo_code, options = [], users = [] }) {
         this.id = id
         this.level = level
+        User.currentUser.result = this.level
         this.description = description
         this.free_content = free_content
         this.products = products
         this.promo_code = promo_code
         this.options = options
-        this.users = users
-        // debugger
+        this.users = users.push(User.currentUser)
+
         this.element = document.createElement('div');
         this.element.dataset['id'] = id;
         this.element.id = `result-${id}`;
@@ -23,7 +24,7 @@ class RealtorLevel {
         this.element.innerHTML =
             `
             <div id="result-${this.id}">
-            <h3 class="level">${this.level}</h3>
+            <h3 class="level">${User.currentUser.first_name}, you are a ${this.level}</h3>
             <p class="description">${this.description}</p>
             <a href="${this.free_content}">Download Free Content</a>
             <p class="products">Products Suggestions: ${this.products}</p>

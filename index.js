@@ -21,6 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 });
 
-questionCall.getQuestions();
+// questionCall.getQuestions();
 // optionCall.getOptions();
 // realtorLevelCall.getResult();

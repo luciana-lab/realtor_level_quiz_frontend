@@ -4,14 +4,11 @@ class UserApi {
     }
 
     createUsers() {
-        // debugger
         const userInfo = {
-            // user: {
             first_name: firstNameInput.value,
             last_name: lastNameInput.value,
             email: emailInput.value,
-            has_account: hasAccountInput.value,
-            // }
+            has_account: hasAccountInput.checked,
         }
         const configObj = {
             method: 'POST',
@@ -31,21 +28,32 @@ class UserApi {
                 }
             })
             .then(data => {
+                User.findOrCreateBy(data)
+
+                // const user = new User(data)
+                // user.attachToDom()
+                // console.log(data)
                 // debugger
-                new User(data)
-                console.log(data)
             })
             .catch(error => console.log(error))
 
-        // fetch(this.port, configObj)
-        //     .then(resp => resp.json())
-        //     .then(data => {
-        //         // debugger
-        //         new User(data)
-        //         console.log(data)
-        //     })
+        questionCall.getQuestions()
+    }
 
-        // questionCall.getQuestions()
+    updateUserResult(result) {
+        const resultInfo = { result }
+
+        const configObj = {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(resultInfo)
+        }
+
+        fetch(`${this.port}/${id}`, configObj)
+            .then()
     }
 
 }
