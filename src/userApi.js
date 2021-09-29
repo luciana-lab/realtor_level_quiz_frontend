@@ -56,13 +56,22 @@ class UserApi {
     }
 
     updateUserResult(result) {
+        const updateUser = {
+            first_name: firstNameInput.value,
+            last_name: lastNameInput.value,
+            email: emailInput.value,
+            has_account: hasAccountInput.checked,
+            result: result,
+        }
+
         const configObj = {
             method: 'PATCH',
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json"
             },
-            body: JSON.stringify({ result: result })
+            body: JSON.stringify(updateUser)
+            // body: JSON.stringify({ result: result })
         }
 
         fetch(`${this.port}/${User.currentUser.id}`, configObj)

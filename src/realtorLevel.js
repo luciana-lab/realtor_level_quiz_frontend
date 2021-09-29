@@ -28,6 +28,7 @@ class RealtorLevel {
     }
 
     static updateDatabase() {
+        // debugger
         userCall.updateUserResult(User.currentUser.result)
     }
 
@@ -36,7 +37,7 @@ class RealtorLevel {
         this.element.innerHTML =
             `
             <div id="result-${this.id}">
-            <h3 class="level">${User.currentUser.first_name}, you are a ${this.level}</h3>
+            <h3 class="level">${firstNameInput.value}, you are a ${this.level}</h3>
             <p class="description">${this.description}</p>
             <a href="${this.free_content}">Download Free Content</a>
             <p class="products">Products Suggestions: ${this.products}</p>
