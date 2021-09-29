@@ -5,6 +5,9 @@ class QuestionApi {
 
     getQuestions() {
         form.remove()
+        // quizContainer.hidden = true
+        // quizContainer.append()
+        // resultContainer.remove()
 
         fetch(this.port)
             .then(resp => resp.json())

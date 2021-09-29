@@ -4,7 +4,11 @@ class RealtorLevelApi {
     }
 
     getResult(level) {
-        quizContainer.remove()
+        // quizContainer.style.display = "none"
+        // quizContainer.style.visibility = "hidden"
+        // quizContainer.hidden = true
+        quizDiv.removeChild(quizContainer)
+        resultDiv.appendChild(resultContainer)
         fetch(this.port)
             .then(resp => resp.json())
             .then(data => {

@@ -33,9 +33,9 @@ class User {
     //     return this.element
     // }
 
-    attachToDom() {
-        // debugger
-        // User.container.appendChild(this.render())
-    }
+    // attachToDom() {
+    // debugger
+    // User.container.appendChild(this.render())
+    // }
 
 }
