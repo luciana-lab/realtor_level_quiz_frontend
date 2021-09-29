@@ -89,10 +89,6 @@ class Question {
                     realtorLevelCall.getResult(level3)
                 }
             }
-
-            // debugger
-            // realtorLevelCall.getResult();
-            // alert("All good!")
         } else {
             alert("You must answer all questions");
             return false

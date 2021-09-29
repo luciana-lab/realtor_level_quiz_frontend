@@ -20,7 +20,7 @@ class User {
     }
 
     static findOrCreateBy(user) {
-        debugger
+        // debugger
         return this.findByEmail(user.email) || new User(user)
     }
 

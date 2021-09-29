@@ -28,11 +28,13 @@ class UserApi {
                 }
             })
             .then(data => {
-                User.findOrCreateBy(data)
+                // debugger
+                // User.findOrCreateBy(data)
 
-                // const user = new User(data)
+                const user = new User(data)
                 // user.attachToDom()
-                // console.log(data)
+
+                console.log(data)
                 // debugger
             })
             .catch(error => console.log(error))
@@ -41,19 +43,21 @@ class UserApi {
     }
 
     updateUserResult(result) {
-        const resultInfo = { result }
-
         const configObj = {
             method: 'PATCH',
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json"
             },
-            body: JSON.stringify(resultInfo)
+            body: JSON.stringify({ result: result })
         }
 
-        fetch(`${this.port}/${id}`, configObj)
-            .then()
+        fetch(`${this.port}/${User.currentUser.id}`, configObj)
+            .then(resp => resp.json())
+            .then(data => {
+                console.log(data)
+            })
+            .catch(error => console.log(error))
     }
 
 }

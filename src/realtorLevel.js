@@ -20,6 +20,11 @@ class RealtorLevel {
         RealtorLevel.all.push(this);
     }
 
+    static updateDatabase() {
+        userCall.updateUserResult(User.currentUser.result)
+    }
+
+
     render() {
         this.element.innerHTML =
             `
@@ -38,6 +43,7 @@ class RealtorLevel {
 
     attachToDom() {
         RealtorLevel.container.appendChild(this.render())
+        RealtorLevel.updateDatabase()
     }
 
 }
