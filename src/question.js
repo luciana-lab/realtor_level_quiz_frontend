@@ -1,10 +1,12 @@
 const btn = document.createElement('button')
 btn.type = "submit"
 btn.innerHTML = "Get Result"
+btn.id = "quiz-btn"
 
 class Question {
     static all = [];
     static container = document.getElementById("question-container");
+    // static container = document.getElementById("question");
     // static quizForm = document.getElementById("quiz-form")
 
     constructor({ id, title, options = [] }) {
@@ -15,6 +17,7 @@ class Question {
         this.element = document.createElement('div');
         this.element.dataset['id'] = id;
         this.element.id = `question-${id}`;
+        this.element.classList = "questions-form-control";
 
         Question.all.push(this);
         // debugger
@@ -23,7 +26,6 @@ class Question {
     render() {
         this.element.innerHTML = `
         <h4 class="title">${this.title}</h4>
-        </div>
         `
         for (let option of this.options) {
             let radiobox = document.createElement('input')
@@ -35,14 +37,18 @@ class Question {
             let label = document.createElement('label')
             label.htmlFor = `choice-${option.id}`
 
-            let desciption = document.createTextNode(option.content)
-            label.appendChild(desciption)
+            let description = document.createTextNode(option.content)
+
 
             let newLine = document.createElement('br')
 
-            this.element.appendChild(radiobox)
+
             this.element.appendChild(label)
+            label.appendChild(radiobox)
+            label.appendChild(description)
             this.element.appendChild(newLine)
+
+
 
             // debugger
         }
@@ -96,8 +102,10 @@ class Question {
     }
 
     attachToDom() {
+
         Question.container.appendChild(this.render())
         Question.container.append(btn)
+
 
         btn.addEventListener("click", this.validate)
         // Question.quizForm.appendChild(this.render())

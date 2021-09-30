@@ -52,6 +52,7 @@ class UserApi {
             })
             .catch(error => console.log(error))
 
+        quizDiv.appendChild(quizContainer)
         questionCall.getQuestions()
     }
 

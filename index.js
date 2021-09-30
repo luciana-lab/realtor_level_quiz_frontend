@@ -17,37 +17,18 @@ const resultDiv = document.getElementById("result")
 const resultContainer = document.getElementById("result-container");
 
 document.addEventListener("DOMContentLoaded", () => {
+    // quizContainer.remove()
     form.addEventListener('submit', handleSubmit);
 
-    /* form css
-    const inputs = document.querySelectorAll('input[type=text], input[type=email]');
-    for (i = 0; i < inputs.length; i++) {
-        const inputEl = inputs[i];
-        if (inputEl.value.trim() !== '') {
-            inputEl.parentNode.classList.add('input--filled');
-        }
-        inputEl.addEventListener('focus', onFocus);
-        inputEl.addEventListener('blur', onBlur);
-    }
-
-    function onFocus(ev) {
-        ev.target.parentNode.classList.add('inputs--filled');
-    }
-
-    function onBlur(ev) {
-        if (ev.target.value.trim() === '') {
-            ev.target.parentNode.classList.remove('inputs--filled');
-        }
-    }
-    */
-
     function handleSubmit(e) {
+
         e.preventDefault();
         userCall.createUsers();
     };
 });
 
-// questionCall.getQuestions();
+
+questionCall.getQuestions();
 // optionCall.getOptions();
 // realtorLevelCall.getResult();
 
