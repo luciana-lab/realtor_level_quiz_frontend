@@ -19,7 +19,7 @@ const resultContainer = document.getElementById("result-container");
 document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener('submit', handleSubmit);
 
-    // form css
+    /* form css
     const inputs = document.querySelectorAll('input[type=text], input[type=email]');
     for (i = 0; i < inputs.length; i++) {
         const inputEl = inputs[i];
@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ev.target.parentNode.classList.remove('inputs--filled');
         }
     }
+    */
 
     function handleSubmit(e) {
         e.preventDefault();
