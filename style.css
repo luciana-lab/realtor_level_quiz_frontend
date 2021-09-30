@@ -15,7 +15,7 @@ body {
 
 div.logo {
     text-align: center;
-    padding-top: 1em;
+    padding-top: 1.5em;
 }
 
 div.logo img {
@@ -31,6 +31,7 @@ div.logo img {
     font: 700 25px 'Montserrat';
     letter-spacing: .08rem;
     text-transform: uppercase;
+    margin: 40px 0 0 0;
 }
 
 #user-form-p {
@@ -199,7 +200,8 @@ main {
 }
 
 /* Quiz Questions */
-div#question-container {
+div#question-container,
+div#result-container {
     background-color: #fff;
 	max-width: 70%;
 	margin: 50px auto;
@@ -243,6 +245,61 @@ div.questions-form-control {
     color: white;
 }
 
-#quiz-btn:hover {
+#quiz-btn:hover,
+.retake-quiz-btn {
     opacity: 1;
 }
+
+/* Result */
+.retake-quiz-btn {
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+
+    opacity: 0.9;
+    background-color: #dd4b39;
+    color: white;
+}
+
+/* Result Slideshow Images */
+.mySlides {
+    display: none;
+    /* display: block; */
+  }
+  
+  .mySlides img {
+    vertical-align: middle;
+  }
+
+  .slideshow-container {
+    max-width: 500px;
+    position: relative;
+    margin: auto;
+  }
+
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+    from {
+      opacity: .4
+    }
+    to {
+      opacity: 1
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: .4
+    }
+    to {
+      opacity: 1
+    }
+  }

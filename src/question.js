@@ -1,13 +1,9 @@
-const btn = document.createElement('button')
-btn.type = "submit"
-btn.innerHTML = "Get Result"
-btn.id = "quiz-btn"
-
 class Question {
     static all = [];
     static container = document.getElementById("question-container");
     // static container = document.getElementById("question");
     // static quizForm = document.getElementById("quiz-form")
+
 
     constructor({ id, title, options = [] }) {
         this.id = id;
@@ -77,24 +73,23 @@ class Question {
         }
 
         if (check === 6) {
-            const level1 = "Expert"
-            const level2 = "Master"
-            const level3 = "Top Agent"
+            let level;
             if (expert > master && expert > top) {
-                realtorLevelCall.getResult(level1)
+                level = "Expert"
             } else if (master > expert && master > top) {
-                realtorLevelCall.getResult(level2)
+                level = "Master"
             } else if (top > expert && top > master) {
-                realtorLevelCall.getResult(level3)
+                level = "Top Agent"
             } else if (expert === master && expert === top && master === top) {
                 if (questions[18].checked) {
-                    realtorLevelCall.getResult(level1)
+                    level = "Expert"
                 } else if (questions[19].checked) {
-                    realtorLevelCall.getResult(level2)
+                    level = "Master"
                 } else if (questions[20].checked) {
-                    realtorLevelCall.getResult(level3)
+                    level = "Top Agent"
                 }
             }
+            realtorLevelCall.getResult(level);
         } else {
             alert("You must answer all questions");
             return false
@@ -105,7 +100,6 @@ class Question {
 
         Question.container.appendChild(this.render())
         Question.container.append(btn)
-
 
         btn.addEventListener("click", this.validate)
         // Question.quizForm.appendChild(this.render())

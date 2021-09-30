@@ -16,8 +16,15 @@ const quizContainer = document.getElementById("question-container");
 const resultDiv = document.getElementById("result")
 const resultContainer = document.getElementById("result-container");
 
+const btn = document.createElement('button')
+btn.type = "submit"
+btn.innerHTML = "Get Result"
+btn.id = "quiz-btn"
+
+
 document.addEventListener("DOMContentLoaded", () => {
-    // quizContainer.remove()
+    quizContainer.remove()
+    resultContainer.remove()
     form.addEventListener('submit', handleSubmit);
 
     function handleSubmit(e) {
@@ -28,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-questionCall.getQuestions();
+// questionCall.getQuestions();
 // optionCall.getOptions();
 // realtorLevelCall.getResult();
 

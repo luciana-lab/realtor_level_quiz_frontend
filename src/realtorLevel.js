@@ -1,6 +1,7 @@
 const quizBtn = document.createElement('button')
 quizBtn.type = "submit"
 quizBtn.innerHTML = "Retake quiz"
+quizBtn.classList = "retake-quiz-btn"
 // const retakeQuizBtn = document.getElementById("retake-quiz")
 
 class RealtorLevel {
@@ -32,10 +33,10 @@ class RealtorLevel {
         userCall.updateUserResult(User.currentUser.result)
     }
 
-
     render() {
         this.element.innerHTML =
             `
+
             <div id="result-${this.id}">
             <h3 class="level">${firstNameInput.value}, you are a ${this.level}</h3>
             <p class="description">${this.description}</p>
@@ -45,6 +46,7 @@ class RealtorLevel {
             <a href="https://www.corefact.com/print/catalog/205-featured/products" class="buttton">Go to Store</a>
             </div>
             `
+
 
         // debugger
         return this.element
@@ -64,6 +66,7 @@ class RealtorLevel {
     }
 
     attachToDom() {
+        // debugger
         RealtorLevel.container.appendChild(this.render())
         RealtorLevel.container.append(quizBtn)
 
