@@ -14,15 +14,15 @@ class User {
         User.all.push(this)
     }
 
-    static findByEmail(email) {
-        // debugger
-        return this.all.find(function (user) { user.email === email })
-    }
+    // static findByEmail(email) {
+    // debugger
+    //     return this.all.find(function (user) { user.email === email })
+    // }
 
-    static findOrCreateBy(user) {
-        // debugger
-        return this.findByEmail(user.email) || new User(user)
-    }
+    // static findOrCreateBy(user) {
+    // debugger
+    //     return this.findByEmail(user.email) || new User(user)
+    // }
 
     // render() {
     //     this.element.innerHTML =
@@ -37,5 +37,6 @@ class User {
     // debugger
     // User.container.appendChild(this.render())
     // }
+
 
 }

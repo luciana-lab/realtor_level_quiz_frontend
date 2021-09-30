@@ -5,26 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
     <title>Real Estate Agent Level Quiz</title>
 </head>
 
 <body>
     <div id="user-form">
-        <form id="user-form">
-            <label for="user-first_name">First Name:</label>
-            <input type="text" name="first_name" id="user-first_name" placeholder="Jessica" /><br>
+        <h1 id="user-form-h1">What type of real estate agent you are?</h1>
+        <main>
+            <figure>
+                <picture>
+                    <img src="https://corefact-marketing.s3.us-west-1.amazonaws.com/random/user-form-lion.png"
+                        sizes=" 360px" alt="Brigh Side - The Sold Lion" />
+                </picture>
+            </figure>
 
-            <label for="user-last_name">Last Name:</label>
-            <input type="text" name="last_name" id="user-last_name" placeholder="Cellars" /><br>
+            <form id="user-form">
+                <span>
+                    <label for="user-first_name" class="text-small-uppercase">First Name</label>
+                    <input class="text-body" type="text" name="first_name" id="user-first_name" required />
+                </span>
+                <span>
+                    <label for="user-last_name" class="text-small-uppercase">Last Name</label>
+                    <input class="text-body" type="text" name="last_name" id="user-last_name" required />
+                </span>
+                <span>
+                    <label for="user-email" class="text-small-uppercase">Email</label>
+                    <input class="text-body" type="email" name="email" id="user-email" required />
+                </span>
 
-            <label for="user-email">Email:</label>
-            <input type="email" name="email" id="user-email" placeholder="jessica.cellars@corefact.com" /><br>
-
-            <label for="user-has_account">Corefact Client:</label>
-            <input type="checkbox" name="user-has_account" id="user-has_account" /><br>
-
-            <input type="submit" value="Start" />
-        </form>
+                <label for="user-has_account" class="text-small-uppercase" id="switch">Corefact Client
+                    <input class="text-body" type="checkbox" name="user-has_account" id="user-has_account" />
+                    <span class="slider"></span>
+                </label>
+                <input class="text-small-uppercase" id="form-submit" type="submit" value="Start Quiz" />
+            </form>
+        </main>
     </div>
     <div id="question">
         <div id="question-container"></div>

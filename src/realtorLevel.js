@@ -64,7 +64,6 @@ class RealtorLevel {
     }
 
     attachToDom() {
-
         RealtorLevel.container.appendChild(this.render())
         RealtorLevel.container.append(quizBtn)
 
