@@ -44,33 +44,19 @@ class RealtorLevel {
               <img src="https://corefact-marketing.s3.us-west-1.amazonaws.com/feature-banners/fall_sale_banner_Unbeleafable.jpg" alt="Slide 4"/>
             </div>
             <div id="result-${this.id}">
-            <h3 class="level">${firstNameInput.value}, you are a ${this.level}</h3>
-            <p class="description">${this.description}</p>
-            <a href="${this.free_content}">Download Free Content</a>
+            <h3 class="level">${firstNameInput.value}, you are ${this.level}!</h3>
+            <p class="description">${this.description.split('. ')[0]}.</p>
+            <p class="description">${this.description.split('. ')[1]}.</p>
+            <p class="description">${this.description.split('. ')[2]}</p>
             <p class="products">Products Suggestions: ${this.products}</p>
-            <p class="promo-code">Use ${this.promo_code} to get 10% off up to $50 on all products listed above.</p>
-            <a href="https://www.corefact.com/print/catalog/205-featured/products" class="buttton">Go to Store</a>
+            <a href="${this.free_content}" target="_blank" rel="noopener noreferrer" class="button-free-content">Download Free Content</a>
+            <a href="https://www.corefact.com/print/catalog/205-featured/products" target="_blank" rel="noopener noreferrer" class="buttton-store">Get 10% off with promo code ${this.promo_code}</a>
+            <p><span id="promo-code-info">10% off up to $50 on ALL products.</span></p>
             </div>
             `
         // debugger
         return this.element
     }
-
-    // static showSlides() {
-    //     let i;
-    //     const slides = document.getElementsByClassName("mySlides");
-    //     for (i = 0; i < slides.length; i++) {
-    //         slides[i].style.display = "none";
-    //     }
-    //     slideIndex++;
-    //     if (slideIndex > slides.length) {
-    //         slideIndex = 1
-    //     }
-
-    //     slides[slideIndex - 1].style.display = "block";
-    //     setTimeout(this.showSlides, 5000);
-
-    // }
 
     reloadQuiz() {
         const userResult = document.getElementById("user-result")
@@ -89,8 +75,6 @@ class RealtorLevel {
         // debugger
         RealtorLevel.container.appendChild(this.render())
         RealtorLevel.container.append(quizBtn)
-
-        // RealtorLevel.showSlides()
 
         quizBtn.addEventListener("click", this.reloadQuiz)
 

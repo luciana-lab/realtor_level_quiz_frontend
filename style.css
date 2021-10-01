@@ -1,5 +1,5 @@
 body {
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     background: #e6e7e8;
 }
@@ -112,18 +112,6 @@ main {
     width: 90%;
 }
 
-/* @media (min-width: 768px) {
-    main {
-        height: 21.25rem;
-        left: 50%;
-        margin: auto;
-        position: absolute;
-        transform: translate(-50%, +50%);
-        top: 50%;
-        width: 42.5rem;
-    }
-} */
-
 /* Form Skin */
 
 input[type="email"],
@@ -160,7 +148,6 @@ input[type=submit]:focus {
 }
 
 label {
-    /* display: inline-block; */
     transform: translate(0, 1.25rem);
     transition: 0.15s;
 }
@@ -256,48 +243,12 @@ div.questions-form-control {
     margin: 8px 0;
     border: none;
     cursor: pointer;
-
     opacity: 0.9;
     background-color: #dd4b39;
     color: white;
 }
 
 /* Result Slideshow Images */
-      /* .mySlides {
-        display: none
-      }
-      .mySlides fade img {
-        vertical-align: middle;
-      }
-      .slideshow-container {
-        max-width: 500px;
-        position: relative;
-        margin: auto;
-      }
-
-      /* Fading animation */
-      /* .fade {
-        -webkit-animation-name: fade;
-        -webkit-animation-duration: 1.5s;
-        animation-name: fade;
-        animation-duration: 1.5s;
-      }
-      @-webkit-keyframes fade {
-        from {
-          opacity: .4
-        }
-        to {
-          opacity: 1
-        }
-      }
-      @keyframes fade {
-        from {
-          opacity: .4
-        }
-        to {
-          opacity: 1
-        }
-      } */
 .slideshow-container {
     width: 100%; 
     height: 0px; 
@@ -322,3 +273,44 @@ div.questions-form-control {
 .slideshow-container img:nth-child(2){animation-delay:5s;}
 .slideshow-container img:nth-child(3){animation-delay:10s;}
 .slideshow-container img:nth-child(4){animation-delay:15s;}
+
+h3.level {
+    text-align: center;
+    color: #6d6e70;
+    font: 700 25px 'Montserrat';
+    letter-spacing: .08rem;
+    text-transform: uppercase;
+}
+
+p.description,
+p.products,
+p.promo-code {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+.button-free-content {
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+}
+
+.buttton-store {
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+}
+
+span#promo-code-info {
+    font-size: 0.8em;
+}
