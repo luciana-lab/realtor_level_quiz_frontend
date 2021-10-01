@@ -3,6 +3,7 @@ quizBtn.type = "submit"
 quizBtn.innerHTML = "Retake quiz"
 quizBtn.classList = "retake-quiz-btn"
 // const retakeQuizBtn = document.getElementById("retake-quiz")
+let slideIndex = 0;
 
 class RealtorLevel {
     static all = [];
@@ -36,7 +37,12 @@ class RealtorLevel {
     render() {
         this.element.innerHTML =
             `
-
+            <div class="slideshow-container">
+              <img src="https://corefact-marketing.s3.us-west-1.amazonaws.com/feature-banners/brightside-halloween-banner.jpg" alt="Slide 1"/>
+              <img src="https://corefact-marketing.s3-us-west-1.amazonaws.com/feature-banners/Market-listings-banner.jpg" alt="Slide 2"/>
+              <img src="https://corefact-marketing.s3.us-west-1.amazonaws.com/feature-banners/agent-brochure-banner.jpg" alt="Slide 3"/>
+              <img src="https://corefact-marketing.s3.us-west-1.amazonaws.com/feature-banners/fall_sale_banner_Unbeleafable.jpg" alt="Slide 4"/>
+            </div>
             <div id="result-${this.id}">
             <h3 class="level">${firstNameInput.value}, you are a ${this.level}</h3>
             <p class="description">${this.description}</p>
@@ -46,11 +52,25 @@ class RealtorLevel {
             <a href="https://www.corefact.com/print/catalog/205-featured/products" class="buttton">Go to Store</a>
             </div>
             `
-
-
         // debugger
         return this.element
     }
+
+    // static showSlides() {
+    //     let i;
+    //     const slides = document.getElementsByClassName("mySlides");
+    //     for (i = 0; i < slides.length; i++) {
+    //         slides[i].style.display = "none";
+    //     }
+    //     slideIndex++;
+    //     if (slideIndex > slides.length) {
+    //         slideIndex = 1
+    //     }
+
+    //     slides[slideIndex - 1].style.display = "block";
+    //     setTimeout(this.showSlides, 5000);
+
+    // }
 
     reloadQuiz() {
         const userResult = document.getElementById("user-result")
@@ -69,6 +89,8 @@ class RealtorLevel {
         // debugger
         RealtorLevel.container.appendChild(this.render())
         RealtorLevel.container.append(quizBtn)
+
+        // RealtorLevel.showSlides()
 
         quizBtn.addEventListener("click", this.reloadQuiz)
 
