@@ -198,6 +198,11 @@ div#result-container {
 div.questions-form-control {
     text-align: left;
     margin-bottom: 25px;
+    font-family: 'Helvetica';
+}
+
+h4.title{
+    font-weight: bold;
 }
 
 .questions-form-control label {
@@ -229,6 +234,9 @@ div.questions-form-control {
     opacity: 0.9;
     background-color: #3e914d;
     color: white;
+    font-family: 'Montserrat';
+    letter-spacing: .02rem;
+    text-transform: uppercase;
 }
 
 #quiz-btn:hover,
@@ -245,13 +253,16 @@ div.questions-form-control {
     opacity: 0.9;
     background-color: #dd4b39;
     color: white;
+    font-family: 'Montserrat';
+    letter-spacing: .02rem;
+    text-transform: uppercase;
 }
 
 /* Result Slideshow Images */
 .slideshow-container {
     width: 100%; 
     height: 0px; 
-    padding-bottom: 50%; 
+    padding-bottom: 45%; 
     overflow: hidden; 
     position: relative;
 }
@@ -297,6 +308,10 @@ p.promo-code {
     background-color: #47559b;
     color: white;
     text-decoration: none;
+    font-family: 'Montserrat';
+    letter-spacing: .02rem;
+    text-transform: uppercase;
+    font-size: 13px;
 }
 
 .buttton-store {
@@ -308,6 +323,10 @@ p.promo-code {
     background-color: #5ea370;
     color: white;
     text-decoration: none;
+    font-family: 'Montserrat';
+    letter-spacing: .02rem;
+    text-transform: uppercase;
+    font-size: 13px;
 }
 
 span#promo-code-info {

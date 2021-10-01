@@ -36,9 +36,9 @@ class RealtorLevel {
         for (let i = 0; i < words.length; i++) {
             let word = words[i];
             if (word.indexOf('Luxe') === 0 || word.indexOf('presentation') === 0 || word.indexOf('Newsletter') === 0 || word.indexOf('Flyer') === 0 || word.indexOf('postcard') === 0 || word.indexOf('Brochures') === 0 || word.indexOf('signage') === 0) {
-                word = `<a href='https://www.corefact.com/c/products'>${word}</a>`;
+                word = `<a href='https://www.corefact.com/c/products' target="_blank" rel="noopener noreferrer">${word}</a>`;
             } else if (word.indexOf('consultation') === 0) {
-                word = `<a href='https://www.corefact.com/c/elite'>${word}</a>`;
+                word = `<a href='https://www.corefact.com/c/elite' target="_blank" rel="noopener noreferrer">${word}</a>`;
             }
             newText += word + ' ';
         }
@@ -66,7 +66,7 @@ class RealtorLevel {
             </div>
             <div id="result-buttons">
             <a href="${this.free_content}" target="_blank" rel="noopener noreferrer" class="button-free-content">Download Free Content</a>
-            <a href="https://www.corefact.com/print/catalog/205-featured/products" target="_blank" rel="noopener noreferrer" class="buttton-store">*Get 10% off with promo code ${this.promo_code}</a>
+            <a href="https://www.corefact.com/print/catalog/205-featured/products" target="_blank" rel="noopener noreferrer" class="buttton-store">*Get 10% off with promo code <u>${this.promo_code}</u></a>
             </div>
             <p><span id="promo-code-info">*10% off up to $50 on ALL products.</span></p>
             `
