@@ -29,7 +29,21 @@ class RealtorLevel {
     }
 
     render() {
-        // debugger
+        let text = this.description
+        let words = text.split(' ');
+        let newText = '';
+
+        for (let i = 0; i < words.length; i++) {
+            let word = words[i];
+            if (word.indexOf('Luxe') === 0 || word.indexOf('presentation') === 0 || word.indexOf('Newsletter') === 0 || word.indexOf('Flyer') === 0 || word.indexOf('postcard') === 0 || word.indexOf('Brochures') === 0 || word.indexOf('signage') === 0) {
+                word = `<a href='https://www.corefact.com/c/products'>${word}</a>`;
+            } else if (word.indexOf('consultation') === 0) {
+                word = `<a href='https://www.corefact.com/c/elite'>${word}</a>`;
+            }
+            newText += word + ' ';
+        }
+        this.description = newText;
+
         this.element.innerHTML =
             `
             <div class="slideshow-container">
@@ -56,7 +70,7 @@ class RealtorLevel {
             </div>
             <p><span id="promo-code-info">*10% off up to $50 on ALL products.</span></p>
             `
-
+        // debugger
 
         return this.element
     }
