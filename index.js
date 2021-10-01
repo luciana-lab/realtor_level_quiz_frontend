@@ -21,6 +21,11 @@ btn.type = "submit"
 btn.innerHTML = "Get Result"
 btn.id = "quiz-btn"
 
+const quizBtn = document.createElement('button')
+quizBtn.type = "submit"
+quizBtn.innerHTML = "Retake quiz"
+quizBtn.classList = "retake-quiz-btn"
+
 
 document.addEventListener("DOMContentLoaded", () => {
     quizContainer.remove()

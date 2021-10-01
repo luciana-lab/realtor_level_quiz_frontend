@@ -1,10 +1,3 @@
-const quizBtn = document.createElement('button')
-quizBtn.type = "submit"
-quizBtn.innerHTML = "Retake quiz"
-quizBtn.classList = "retake-quiz-btn"
-// const retakeQuizBtn = document.getElementById("retake-quiz")
-let slideIndex = 0;
-
 class RealtorLevel {
     static all = [];
     static container = document.getElementById("result-container");
@@ -49,11 +42,14 @@ class RealtorLevel {
             <p class="description">${this.description.split('. ')[1]}.</p>
             <p class="description">${this.description.split('. ')[2]}</p>
             <p class="products">Products Suggestions: ${this.products}</p>
+            </div>
+            <div id="result-buttons">
             <a href="${this.free_content}" target="_blank" rel="noopener noreferrer" class="button-free-content">Download Free Content</a>
             <a href="https://www.corefact.com/print/catalog/205-featured/products" target="_blank" rel="noopener noreferrer" class="buttton-store">Get 10% off with promo code ${this.promo_code}</a>
-            <p><span id="promo-code-info">10% off up to $50 on ALL products.</span></p>
             </div>
+            <p><span id="promo-code-info">10% off up to $50 on ALL products.</span></p>
             `
+
         // debugger
         return this.element
     }
@@ -74,7 +70,10 @@ class RealtorLevel {
     attachToDom() {
         // debugger
         RealtorLevel.container.appendChild(this.render())
-        RealtorLevel.container.append(quizBtn)
+        // RealtorLevel.container.append(quizBtn)
+
+        const divResultBtns = document.getElementById("result-buttons")
+        divResultBtns.prepend(quizBtn)
 
         quizBtn.addEventListener("click", this.reloadQuiz)
 

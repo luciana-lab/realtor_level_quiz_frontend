@@ -1,9 +1,6 @@
 class Question {
     static all = [];
     static container = document.getElementById("question-container");
-    // static container = document.getElementById("question");
-    // static quizForm = document.getElementById("quiz-form")
-
 
     constructor({ id, title, options = [] }) {
         this.id = id;
@@ -16,7 +13,6 @@ class Question {
         this.element.classList = "questions-form-control";
 
         Question.all.push(this);
-        // debugger
     }
 
     render() {
@@ -43,10 +39,6 @@ class Question {
             label.appendChild(radiobox)
             label.appendChild(description)
             this.element.appendChild(newLine)
-
-
-
-            // debugger
         }
         return this.element
     }
@@ -97,12 +89,9 @@ class Question {
     }
 
     attachToDom() {
-
         Question.container.appendChild(this.render())
         Question.container.append(btn)
 
         btn.addEventListener("click", this.validate)
-        // Question.quizForm.appendChild(this.render())
     }
-
 }
