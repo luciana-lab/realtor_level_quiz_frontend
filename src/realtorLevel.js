@@ -4,7 +4,7 @@ class RealtorLevel {
 
     static mainContainer = document.getElementById("result");
 
-    constructor({ id, level, description, free_content, products, promo_code, options = [], users = [] }) {
+    constructor({ id, level, description, free_content, products, promo_code, slides, options = [], users = [] }) {
         this.id = id
         this.level = level
         User.currentUser.result = this.level
@@ -12,6 +12,7 @@ class RealtorLevel {
         this.free_content = free_content
         this.products = products
         this.promo_code = promo_code
+        this.slides = slides
         this.options = options
         this.users = users.push(User.currentUser)
 
@@ -28,29 +29,35 @@ class RealtorLevel {
     }
 
     render() {
+        // debugger
         this.element.innerHTML =
             `
             <div class="slideshow-container">
-              <img src="https://corefact-marketing.s3.us-west-1.amazonaws.com/feature-banners/brightside-halloween-banner.jpg" alt="Slide 1"/>
-              <img src="https://corefact-marketing.s3-us-west-1.amazonaws.com/feature-banners/Market-listings-banner.jpg" alt="Slide 2"/>
-              <img src="https://corefact-marketing.s3.us-west-1.amazonaws.com/feature-banners/agent-brochure-banner.jpg" alt="Slide 3"/>
-              <img src="https://corefact-marketing.s3.us-west-1.amazonaws.com/feature-banners/fall_sale_banner_Unbeleafable.jpg" alt="Slide 4"/>
+            <a href="https://www.corefact.com/print/catalog" target="_blank" rel="noopener noreferrer">
+              <img src="${this.slides.split(' \n ')[0]}" alt="Slide 1"/>
+              <img src="${this.slides.split(' \n ')[1]}" alt="Slide 2"/>
+              <img src="${this.slides.split(' \n ')[2]}" alt="Slide 3"/>
+              <img src="${this.slides.split(' \n ')[3]}" alt="Slide 4"/>
+              </a>
             </div>
             <div id="result-${this.id}">
             <h3 class="level">${firstNameInput.value}, you are ${this.level}!</h3>
-            <p class="description">${this.description.split('. ')[0]}.</p>
-            <p class="description">${this.description.split('. ')[1]}.</p>
-            <p class="description">${this.description.split('. ')[2]}</p>
-            <p class="products">Products Suggestions: ${this.products}</p>
+            <p class="description">${this.description.split('\n')[0]}</p>
+            <p class="description">${this.description.split('\n')[1]}</p>
+            <p class="description">${this.description.split('\n')[2]}</p>
+            <p class="description">${this.description.split('\n')[3]}</p>
+            <p class="description">${this.description.split('\n')[4]}</p>
+            <p class="description">${this.description.split('\n')[5]}</p>
+            <p class="description">${this.description.split('\n')[6]}</p>
             </div>
             <div id="result-buttons">
             <a href="${this.free_content}" target="_blank" rel="noopener noreferrer" class="button-free-content">Download Free Content</a>
-            <a href="https://www.corefact.com/print/catalog/205-featured/products" target="_blank" rel="noopener noreferrer" class="buttton-store">Get 10% off with promo code ${this.promo_code}</a>
+            <a href="https://www.corefact.com/print/catalog/205-featured/products" target="_blank" rel="noopener noreferrer" class="buttton-store">*Get 10% off with promo code ${this.promo_code}</a>
             </div>
-            <p><span id="promo-code-info">10% off up to $50 on ALL products.</span></p>
+            <p><span id="promo-code-info">*10% off up to $50 on ALL products.</span></p>
             `
 
-        // debugger
+
         return this.element
     }
 
