@@ -1,7 +1,7 @@
 class UserApi {
     constructor(port) {
-        this.port = `${port}/users`
-    }
+        this.port = `${port}/users`;
+    };
 
     createUsers() {
         const userInfo = {
@@ -9,7 +9,7 @@ class UserApi {
             last_name: lastNameInput.value,
             email: emailInput.value,
             has_account: hasAccountInput.checked,
-        }
+        };
         const configObj = {
             method: 'POST',
             headers: {
@@ -17,7 +17,7 @@ class UserApi {
                 Accept: "application/json"
             },
             body: JSON.stringify(userInfo)
-        }
+        };
 
         fetch(this.port, configObj)
             .then(resp => {
@@ -28,11 +28,8 @@ class UserApi {
                 }
             })
             .then(data => {
-                // debugger
-                // const user = User.findOrCreateBy(data)
-
                 if (data.result !== null) {
-                    let level
+                    let level;
                     if (data.result === "Expert") {
                         level = data.result
                     } else if (data.result === "Master") {
@@ -40,21 +37,15 @@ class UserApi {
                     } else if (data.result === "Top Agent") {
                         level = data.result
                     }
-                    realtorLevelCall.getResult(level)
-                }
-                const user = new User(data)
-                // user.attachToDom()
-                // debugger
-
-                console.log(data)
-                console.log(user)
-                // debugger
+                    realtorLevelCall.getResult(level);
+                };
+                const user = new User(data);
             })
             .catch(error => console.log(error))
 
-        quizDiv.appendChild(quizContainer)
-        questionCall.getQuestions()
-    }
+        quizDiv.appendChild(quizContainer);
+        questionCall.getQuestions();
+    };
 
     updateUserResult(result) {
         const updateUser = {
@@ -81,6 +72,5 @@ class UserApi {
                 console.log(data)
             })
             .catch(error => console.log(error))
-    }
-
-}
+    };
+};

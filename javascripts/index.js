@@ -25,7 +25,6 @@ quizBtn.type = "submit"
 quizBtn.innerHTML = "Retake quiz"
 quizBtn.classList = "retake-quiz-btn"
 
-
 document.addEventListener("DOMContentLoaded", () => {
     quizContainer.remove()
     resultContainer.remove()
