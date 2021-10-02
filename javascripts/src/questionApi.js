@@ -1,11 +1,11 @@
 class QuestionApi {
     constructor(port) {
-        this.port = `${port}/questions`
-    }
+        this.port = `${port}/questions`;
+    };
 
     getQuestions() {
 
-        form.remove()
+        form.remove();
 
         // quizContainer.hidden = true
         // quizContainer.append()
@@ -19,10 +19,15 @@ class QuestionApi {
                     q.attachToDom()
                 }
             })
-            .catch()
-    }
+            .catch(this.handleError);
+    };
 
-    // static handleError(error) {
-    //     console.log(error)
-    // }
-}
+    static handleError(error) {
+        flash().innerText = error;
+        flash().classList.remove("hide");
+        setTimeout(() => {
+            flash().innerText = "";
+            flash().classList.add("hide");
+        }, 5000);
+    };
+};
