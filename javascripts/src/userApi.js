@@ -63,7 +63,6 @@ class UserApi {
                 Accept: "application/json"
             },
             body: JSON.stringify(updateUser)
-            // body: JSON.stringify({ result: result })
         }
 
         fetch(`${this.port}/${User.currentUser.id}`, configObj)

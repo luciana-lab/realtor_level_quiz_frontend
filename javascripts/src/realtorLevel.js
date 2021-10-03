@@ -24,7 +24,6 @@ class RealtorLevel {
     }
 
     static updateDatabase() {
-        // debugger
         userCall.updateUserResult(User.currentUser.result)
     }
 
@@ -78,20 +77,13 @@ class RealtorLevel {
     reloadQuiz() {
         const userResult = document.getElementById("user-result")
 
-        // debugger
         resultContainer.removeChild(userResult)
         resultDiv.removeChild(resultContainer)
         quizDiv.appendChild(quizContainer)
-        // quizContainer.style.display = ""
-        // quizContainer.hidden = false
-        // quizContainer.show()
-        // questionCall.getQuestions()
     }
 
     attachToDom() {
-        // debugger
         RealtorLevel.container.appendChild(this.render())
-        // RealtorLevel.container.append(quizBtn)
 
         const divResultBtns = document.getElementById("result-buttons")
         divResultBtns.prepend(quizBtn)
@@ -100,5 +92,4 @@ class RealtorLevel {
 
         RealtorLevel.updateDatabase()
     }
-
 }
