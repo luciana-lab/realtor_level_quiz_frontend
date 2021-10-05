@@ -54,7 +54,7 @@ class UserApi {
             email: emailInput.value,
             has_account: hasAccountInput.checked,
             result: result,
-        }
+        };
 
         const configObj = {
             method: 'PATCH',
@@ -63,7 +63,7 @@ class UserApi {
                 Accept: "application/json"
             },
             body: JSON.stringify(updateUser)
-        }
+        };
 
         fetch(`${this.port}/${User.currentUser.id}`, configObj)
             .then(resp => resp.json())

@@ -20,35 +20,32 @@ class Question {
         <h4 class="title">${this.title}</h4>
         `
         for (let option of this.options) {
-            let radiobox = document.createElement('input')
-            radiobox.type = 'radio'
-            radiobox.id = `choice-${option.id}`
-            radiobox.value = option.level
-            radiobox.name = `radio-question-${this.id}`
+            let radiobox = document.createElement('input');
+            radiobox.type = 'radio';
+            radiobox.id = `choice-${option.id}`;
+            radiobox.value = option.level;
+            radiobox.name = `radio-question-${this.id}`;
 
-            let label = document.createElement('label')
-            label.htmlFor = `choice-${option.id}`
+            let label = document.createElement('label');
+            label.htmlFor = `choice-${option.id}`;
 
-            let description = document.createTextNode(option.content)
+            let description = document.createTextNode(option.content);
+            let newLine = document.createElement('br');
 
-
-            let newLine = document.createElement('br')
-
-
-            this.element.appendChild(label)
-            label.appendChild(radiobox)
-            label.appendChild(description)
-            this.element.appendChild(newLine)
-        }
-        return this.element
-    }
+            this.element.appendChild(label);
+            label.appendChild(radiobox);
+            label.appendChild(description);
+            this.element.appendChild(newLine);
+        };
+        return this.element;
+    };
 
     validate() {
-        let questions = document.querySelectorAll('[name^="radio-question-"]')
-        let check = 0
-        let expert = 0
-        let master = 0
-        let top = 0
+        let questions = document.querySelectorAll('[name^="radio-question-"]');
+        let check = 0;
+        let expert = 0;
+        let master = 0;
+        let top = 0;
         for (let i = 0; i < questions.length; i++) {
             if (questions[i].checked) {
                 check++
@@ -60,9 +57,9 @@ class Question {
                 }
                 if (questions[i].value === "Top Agent") {
                     top++
-                }
-            }
-        }
+                };
+            };
+        };
 
         if (check === 6) {
             let level;
@@ -79,19 +76,19 @@ class Question {
                     level = "Master"
                 } else if (questions[20].checked) {
                     level = "Top Agent"
-                }
-            }
+                };
+            };
             realtorLevelCall.getResult(level);
         } else {
             alert("You must answer all questions");
             return false
-        }
-    }
+        };
+    };
 
     attachToDom() {
-        Question.container.appendChild(this.render())
-        Question.container.append(btn)
+        Question.container.appendChild(this.render());
+        Question.container.append(btn);
 
-        btn.addEventListener("click", this.validate)
-    }
-}
+        btn.addEventListener("click", this.validate);
+    };
+};

@@ -5,30 +5,30 @@ class RealtorLevel {
     static mainContainer = document.getElementById("result");
 
     constructor({ id, level, description, free_content, products, promo_code, slides, options = [], users = [] }) {
-        this.id = id
-        this.level = level
-        User.currentUser.result = this.level
-        this.description = description
-        this.free_content = free_content
-        this.products = products
-        this.promo_code = promo_code
-        this.slides = slides
-        this.options = options
-        this.users = users.push(User.currentUser)
+        this.id = id;
+        this.level = level;
+        User.currentUser.result = this.level;
+        this.description = description;
+        this.free_content = free_content;
+        this.products = products;
+        this.promo_code = promo_code;
+        this.slides = slides;
+        this.options = options;
+        this.users = users.push(User.currentUser);
 
         this.element = document.createElement('div');
         this.element.dataset['id'] = id;
         this.element.id = `user-result`;
 
         RealtorLevel.all.push(this);
-    }
+    };
 
     static updateDatabase() {
-        userCall.updateUserResult(User.currentUser.result)
-    }
+        userCall.updateUserResult(User.currentUser.result);
+    };
 
     render() {
-        let text = this.description
+        let text = this.description;
         let words = text.split(' ');
         let newText = '';
 
@@ -69,27 +69,24 @@ class RealtorLevel {
             </div>
             <p><span id="promo-code-info">*10% off up to $50 on ALL products.</span></p>
             `
-        // debugger
-
-        return this.element
-    }
+        return this.element;
+    };
 
     reloadQuiz() {
-        const userResult = document.getElementById("user-result")
+        const userResult = document.getElementById("user-result");
 
-        resultContainer.removeChild(userResult)
-        resultDiv.removeChild(resultContainer)
-        quizDiv.appendChild(quizContainer)
-    }
+        resultContainer.removeChild(userResult);
+        resultDiv.removeChild(resultContainer);
+        quizDiv.appendChild(quizContainer);
+    };
 
     attachToDom() {
-        RealtorLevel.container.appendChild(this.render())
+        RealtorLevel.container.appendChild(this.render());
 
-        const divResultBtns = document.getElementById("result-buttons")
-        divResultBtns.prepend(quizBtn)
+        const divResultBtns = document.getElementById("result-buttons");
+        divResultBtns.prepend(quizBtn);
+        quizBtn.addEventListener("click", this.reloadQuiz);
 
-        quizBtn.addEventListener("click", this.reloadQuiz)
-
-        RealtorLevel.updateDatabase()
-    }
-}
+        RealtorLevel.updateDatabase();
+    };
+};
