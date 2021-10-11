@@ -12,17 +12,17 @@ class UserApi {
         };
         const configObj = {
             method: 'POST',
-            headers: {
+            headers: { // type of content is dealing with
                 "Content-Type": "application/json",
                 Accept: "application/json"
             },
-            body: JSON.stringify(userInfo)
+            body: JSON.stringify(userInfo) // coverts a JS object/value to a JSON string
         };
 
         fetch(this.port, configObj)
             .then(resp => {
                 if (resp.ok) {
-                    return resp.json()
+                    return resp.json() // if promise fulfilled, read and parse the data
                 } else {
                     throw new Error()
                 }

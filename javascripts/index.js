@@ -1,4 +1,5 @@
-const port = "http://localhost:3000";
+// const port = "http://localhost:3000";
+const port = "https://real-estate-agent-quiz.herokuapp.com"
 const questionCall = new QuestionApi(port);
 const realtorLevelCall = new RealtorLevelApi(port);
 
@@ -25,6 +26,7 @@ quizBtn.type = "submit";
 quizBtn.innerHTML = "Retake quiz";
 quizBtn.classList = "retake-quiz-btn";
 
+// event fires when document has been completely loaded and parsed, without waiting for stylesheets or images to be loaded
 document.addEventListener("DOMContentLoaded", () => {
     quizContainer.remove();
     resultContainer.remove();
