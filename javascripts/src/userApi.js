@@ -13,6 +13,7 @@ class UserApi {
         const configObj = {
             method: 'POST',
             headers: { // type of content is dealing with
+                'Access-Control-Allow-Origin': '*',
                 "Content-Type": "application/json",
                 Accept: "application/json"
             },
@@ -59,6 +60,7 @@ class UserApi {
         const configObj = {
             method: 'PATCH',
             headers: {
+                'Access-Control-Allow-Origin': '*',
                 "Content-Type": "application/json",
                 Accept: "application/json"
             },
