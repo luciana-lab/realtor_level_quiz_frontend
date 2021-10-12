@@ -11,8 +11,8 @@ class UserApi {
             has_account: hasAccountInput.checked,
         };
         const configObj = {
-            mode: 'cors',
-            credentials: 'include',
+            // mode: 'cors',
+            // credentials: 'include',
             method: 'POST',
             headers: { // type of content is dealing with
                 "Content-Type": "application/json",
@@ -59,8 +59,8 @@ class UserApi {
         };
 
         const configObj = {
-            mode: 'cors',
-            credentials: 'include',
+            // mode: 'cors',
+            // credentials: 'include',
             method: 'PATCH',
             headers: {
                 "Content-Type": "application/json",
