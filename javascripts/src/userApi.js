@@ -11,11 +11,8 @@ class UserApi {
             has_account: hasAccountInput.checked,
         };
         const configObj = {
-            // mode: 'cors',
-            // credentials: 'include',
             method: 'POST',
             headers: { // type of content is dealing with
-                "permissions-policy": "interest-cohort=()",
                 "Content-Type": "application/json",
                 Accept: "application/json"
             },
@@ -60,11 +57,8 @@ class UserApi {
         };
 
         const configObj = {
-            // mode: 'cors',
-            // credentials: 'include',
             method: 'PATCH',
             headers: {
-                "permissions-policy": "interest-cohort=()",
                 "Content-Type": "application/json",
                 Accept: "application/json"
             },
