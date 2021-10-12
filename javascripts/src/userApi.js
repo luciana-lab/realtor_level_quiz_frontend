@@ -5,6 +5,7 @@ class UserApi {
 
     createUsers() {
         const userInfo = {
+            mode: 'no-cors',
             first_name: firstNameInput.value,
             last_name: lastNameInput.value,
             email: emailInput.value,
@@ -57,6 +58,7 @@ class UserApi {
         };
 
         const configObj = {
+            mode: 'no-cors',
             method: 'PATCH',
             headers: {
                 "Content-Type": "application/json",
