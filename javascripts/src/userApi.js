@@ -15,6 +15,7 @@ class UserApi {
             // credentials: 'include',
             method: 'POST',
             headers: { // type of content is dealing with
+                "permissions-policy": "interest-cohort=()",
                 "Content-Type": "application/json",
                 Accept: "application/json"
             },
@@ -63,6 +64,7 @@ class UserApi {
             // credentials: 'include',
             method: 'PATCH',
             headers: {
+                "permissions-policy": "interest-cohort=()",
                 "Content-Type": "application/json",
                 Accept: "application/json"
             },
